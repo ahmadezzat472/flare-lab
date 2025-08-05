@@ -6,21 +6,18 @@
       "use": "@vercel/static"
     },
     {
-      "src": "server/index.ts",
+      "src": "server/node-build.ts",
       "use": "@vercel/node"
     }
   ],
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "/server/index.ts"
+      "dest": "/server/node-build.ts"
     },
     {
       "src": "/(.*)",
-      "dest": "/dist/spa/index.html",
-      "headers": {
-        "Cache-Control": "public, max-age=0, must-revalidate"
-      }
+      "dest": "/dist/spa/index.html"
     }
   ],
   "env": {
