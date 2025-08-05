@@ -1,13 +1,12 @@
 import { defineConfig } from "vite";
 import path from "path";
 
-// Server build configuration
 export default defineConfig({
   build: {
     lib: {
-      entry: path.resolve(__dirname, "server/node-build.ts"),
+      entry: path.resolve(__dirname, "server/index.ts"), // Use index.ts as entry
       name: "server",
-      fileName: "production",
+      fileName: "index", // Output as index.mjs
       formats: ["es"],
     },
     outDir: "dist/server",
@@ -15,7 +14,6 @@ export default defineConfig({
     ssr: true,
     rollupOptions: {
       external: [
-        // Node.js built-ins
         "fs",
         "path",
         "url",
@@ -29,16 +27,15 @@ export default defineConfig({
         "buffer",
         "querystring",
         "child_process",
-        // External dependencies that should not be bundled
         "express",
         "cors",
       ],
       output: {
         format: "es",
-        entryFileNames: "[name].mjs",
+        entryFileNames: "index.mjs",
       },
     },
-    minify: false, // Keep readable for debugging
+    minify: false,
     sourcemap: true,
   },
   resolve: {
