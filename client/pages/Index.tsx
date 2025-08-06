@@ -52,31 +52,45 @@ export default function Index() {
           {/* Left Column - Main Content */}
           <div className="lg:col-span-2 space-y-8">
             {/* Hero Section */}
-            <Card className="overflow-hidden">
-              <div className="bg-gradient-to-r from-purple-600 to-purple-700 text-white p-6">
-                <div className="flex items-center gap-4 mb-4">
-                  <MapPin className="w-5 h-5" />
-                  <span className="text-purple-100">
-                    123 Harbor St, Baltimore, MD 21231
-                  </span>
-                </div>
-                <div className="flex gap-3">
-                  <Button
-                    variant="secondary"
-                    size="sm"
-                    className="bg-white text-purple-700 hover:bg-purple-50"
-                  >
-                    <Eye className="w-4 h-4 mr-2" />
-                    View on map
-                  </Button>
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    className="bg-white text-purple-700 hover:bg-purple-50"
-                  >
-                    <Share2 className="w-4 h-4 mr-2" />
-                    Share
-                  </Button>
+            <Card className="overflow-hidden ">
+              <div className="relative h-[250px]">
+                {/* Background image */}
+                <div
+                  className="absolute inset-0 bg-cover bg-center "
+                  style={{ backgroundImage: "url(/images/hero-header.jpg)" }}
+                  aria-hidden="true"
+                />
+                {/* Gradient overlay */}
+                <div
+                  className="absolute inset-0 bg-gradient-to-r from-purple-600 to-purple-700 opacity-40"
+                  aria-hidden="true"
+                />
+                {/* Content */}
+                <div className="relative h-full flex flex-col justify-end z-10 text-white p-6">
+                  <div className="flex items-center gap-4 mb-4">
+                    <MapPin className="w-5 h-5" />
+                    <span className="text-purple-100">
+                      123 Harbor St, Baltimore, MD 21231
+                    </span>
+                  </div>
+                  <div className="flex gap-3">
+                    <Button
+                      variant="secondary"
+                      size="sm"
+                      className="bg-white text-purple-700 hover:bg-purple-50"
+                    >
+                      <Eye className="w-4 h-4 mr-2" />
+                      View on map
+                    </Button>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="bg-white text-purple-700 hover:bg-purple-50"
+                    >
+                      <Share2 className="w-4 h-4 mr-2" />
+                      Share
+                    </Button>
+                  </div>
                 </div>
               </div>
 
